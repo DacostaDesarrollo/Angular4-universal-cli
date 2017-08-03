@@ -3,12 +3,8 @@
   "version": "0.0.0",
   "license": "MIT",
   "scripts": {
-    "ng": "ng",
-    "start": "ng serve",
-    "build": "ng build",
-    "test": "ng test",
-    "lint": "ng lint",
-    "e2e": "ng e2e"
+    "prestart": "ng build --prod && gulp before:ngc && ngc && gulp after:ngc && webpack",
+    "start": "node dist/server.js"
   },
   "private": true,
   "dependencies": {
@@ -20,6 +16,7 @@
     "@angular/http": "^4.0.0",
     "@angular/platform-browser": "^4.0.0",
     "@angular/platform-browser-dynamic": "^4.0.0",
+    "@angular/platform-server": "^4.0.0",
     "@angular/router": "^4.0.0",
     "core-js": "^2.4.1",
     "rxjs": "^5.4.1",
@@ -43,7 +40,15 @@
     "karma-jasmine-html-reporter": "^0.2.2",
     "protractor": "~5.1.2",
     "ts-node": "~3.0.4",
+    "ts-loader": "^2.0.3",
     "tslint": "~5.3.2",
-    "typescript": "~2.3.3"
+    "typescript": "~2.3.3",
+    "webpack": "~2.2.0",
+    "webpack-node-externals": "^1.5.4",
+    "gulp": "^3.9.1",
+    "gulp-clean": "^0.3.2",
+    "gulp-rename": "^1.2.2",
+    "gulp-sass": "^3.1.0",
+    "gulp-sequence": "^0.4.6"
   }
 }
