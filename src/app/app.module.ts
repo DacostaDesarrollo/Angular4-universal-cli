@@ -3,6 +3,7 @@ import { NgModule } from '@angular/core';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
+import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 
 export { AppComponent };
 
@@ -12,7 +13,8 @@ export { AppComponent };
   ],
   imports: [
     BrowserModule.withServerTransition({ appId: 'encuentralo-online' }),
-    AppRoutingModule
+    AppRoutingModule,
+    NgbModule.forRoot()
   ],
   exports: [AppComponent],
   providers: [],
